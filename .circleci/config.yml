@@ -162,7 +162,7 @@ jobs:
               --stack-name "udapeople-backend-${CIRCLE_WORKFLOW_ID:0:7}" \
               --parameter-overrides ID="${CIRCLE_WORKFLOW_ID:0:7}" \
               --region us-west-2 \
-              --sudo bash -c 'AWS_CONFIG_FILE=/root/.aws/config aws s3 sync s3://backup-test-s3 /s3-backup/test'
+              
             
       - run:
           name: Ensure front-end infrastructure exist
