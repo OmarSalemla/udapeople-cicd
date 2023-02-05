@@ -156,12 +156,14 @@ jobs:
       - run:
           name: Ensure back-end infrastructure exists
           command: |
-            aws cloudformation deploy \
+            sudo aws cloudformation deploy \
               --template-file .circleci/files/backend.yml \
               --tags project=udapeople \
               --stack-name "udapeople-backend-${CIRCLE_WORKFLOW_ID:0:7}" \
               --parameter-overrides ID="${CIRCLE_WORKFLOW_ID:0:7}" \
-              --region us-west-2
+              --region us-west-2 \
+              --access key ID=AKIA44YJDIZMIZZME6KV \
+              --secret access key= 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
              
       - run:
           name: Ensure front-end infrastructure exist
